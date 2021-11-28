@@ -1,4 +1,6 @@
-import { Layout } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home, Cart } from "./pages";
 
 import "antd/dist/antd.css";
 
@@ -10,7 +12,14 @@ function cartItems() {
 }
 
 const App = () => {
-  return <Layout></Layout>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
+  );
 
   return (
     <main>
