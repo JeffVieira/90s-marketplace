@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout as AntLayout, Menu, Breadcrumb } from "antd";
+import { Layout as AntLayout, Menu } from "antd";
 import { Link } from "react-router-dom";
 
 import "./Layout.css";
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         </Menu>
       </Header>
       <Content
-        style={{ padding: "0 50px", height: "calc(100vh - 70px - 64px)" }}
+        style={{ padding: "0 50px", minHeight: "calc(100vh - 70px - 64px)" }}
       >
         {children}
       </Content>

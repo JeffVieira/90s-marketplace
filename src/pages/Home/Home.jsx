@@ -1,6 +1,10 @@
 import { Carousel } from "antd";
 
-import { Layout } from "../../components";
+import { Layout, Card } from "../../components";
+
+import { products } from "../../data";
+
+import "./Home.css";
 
 const contentStyle = {
   height: "360px",
@@ -11,6 +15,8 @@ const contentStyle = {
 };
 
 const Home = () => {
+  console.log(products);
+
   return (
     <Layout>
       <Carousel autoplay>
@@ -27,6 +33,12 @@ const Home = () => {
           <h3 style={contentStyle}>4</h3>
         </div>
       </Carousel>
+
+      <div className="products">
+        {products.map((product) => (
+          <Card key={product.id} {...product} />
+        ))}
+      </div>
     </Layout>
   );
 };
