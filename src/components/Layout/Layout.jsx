@@ -1,12 +1,16 @@
 import React from "react";
-import { Layout as AntLayout, Menu } from "antd";
+import { Layout as AntLayout, Menu, Badge } from "antd";
 import { Link } from "react-router-dom";
 
-import "./Layout.css";
+import { useCartContext } from "../CartContext/CartContext";
+
+import style from "./Layout.module.css";
 
 const { Header, Footer, Content } = AntLayout;
 
 const Layout = ({ children }) => {
+  const { cartProducts } = useCartContext();
+
   return (
     <AntLayout className="layout">
       <Header>
@@ -16,16 +20,16 @@ const Layout = ({ children }) => {
             <Link to="/">Home</Link>
           </Menu.Item>
           <Menu.Item key="cart">
-            <Link to="/cart">Cart</Link>
+            <Badge count={cartProducts.length} size="small" offset={[10, -5]}>
+              <Link className={style.link} to="/cart">
+                Cart
+              </Link>
+            </Badge>
           </Menu.Item>
         </Menu>
       </Header>
-      <Content
-        style={{ padding: "0 50px", minHeight: "calc(100vh - 70px - 64px)" }}
-      >
-        {children}
-      </Content>
-      <Footer style={{ textAlign: "center" }}>
+      <Content className={style.content}>{children}</Content>
+      <Footer className={style.footer}>
         90s-Marketplace ©2021 Created by Jeff Vieira
       </Footer>
     </AntLayout>

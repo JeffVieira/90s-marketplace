@@ -1,0 +1,14 @@
+.content {
+  padding: 0 50px;
+  min-height: calc(100vh - 70px - 64px) !important;
+}
+
+.footer {
+  text-align: center;
+}
+
+.link {
+  color: #ffffffa6 !important;
+  padding: 20px;
+  margin: 0 -20px;
+}
