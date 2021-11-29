@@ -1,0 +1,34 @@
+.cartProducts {
+  display: flex;
+  gap: 40px;
+}
+
+.productTable {
+  flex-grow: 1;
+}
+
+.summaryInfo {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+
+.summaryInfo + .summaryInfo {
+  margin-bottom: 10px;
+}
+
+.summaryTotal {
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 30px;
+}
+
+.pageContent {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+
+.breadcrumb {
+  margin: 16px 0 !important;
+}
