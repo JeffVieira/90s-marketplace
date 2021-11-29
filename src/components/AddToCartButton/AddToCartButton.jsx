@@ -1,9 +1,18 @@
 import { Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
-const AddToCartButton = ({ id }) => {
+import { useCartContext } from "../CartContext/CartContext";
+
+const AddToCartButton = ({ product }) => {
+  const { addProduct } = useCartContext();
+
   return (
-    <Button type="primary" icon={<ShoppingCartOutlined />} size="large">
+    <Button
+      onClick={() => addProduct(product)}
+      type="primary"
+      icon={<ShoppingCartOutlined />}
+      size="large"
+    >
       Add to Cart
     </Button>
   );
