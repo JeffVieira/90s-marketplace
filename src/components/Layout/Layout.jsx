@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
   return (
     <AntLayout className="layout">
       <Header>
-        <div className="logo" />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
           <Menu.Item key="home">
             <Link to="/">Home</Link>
