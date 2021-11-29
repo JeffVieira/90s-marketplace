@@ -1,0 +1,15 @@
+.products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contentStyle {
+  height: 360px;
+  color: #fff;
+  line-height: 360px;
+  text-align: center;
+  background: #364d79;
+  font-size: xx-large;
+}
