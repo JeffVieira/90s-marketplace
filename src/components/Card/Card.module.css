@@ -1,0 +1,10 @@
+.bottonInfo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.rating {
+  line-height: 1;
+}

@@ -1,23 +1,28 @@
 import { Card as AntCard, Rate, Tag } from "antd";
-import { EllipsisOutlined } from "@ant-design/icons";
 
 import { AddToCartButton } from "../index";
 
+import { toCurrency } from "../../utils/numberToCurrency";
+
+import style from "./Card.module.css";
+
 const { Meta } = AntCard;
 
-const Card = ({ id, title, price, rating, description, tags, image }) => {
+const Card = ({ product }) => {
   return (
     <AntCard
       size="small"
       style={{ width: 300 }}
-      cover={<img alt={title} src={image} />}
-      actions={[<AddToCartButton id={id} />]}
+      cover={<img alt={product.title} src={product.image} />}
+      actions={[<AddToCartButton product={product} />]}
     >
-      <Meta title={title} description="R$ 400,00" />
+      <Meta title={product.title} description={toCurrency(product.price)} />
 
-      <Rate disabled defaultValue={rating} />
+      <div className={style.bottonInfo}>
+        <Rate className={style.rating} disabled defaultValue={product.rating} />
 
-      <Tag color="warning">Oferta do dia</Tag>
+        {product.onOffer && <Tag color="warning">Oferta do dia</Tag>}
+      </div>
     </AntCard>
   );
 };
